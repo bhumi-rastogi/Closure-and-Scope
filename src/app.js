@@ -1,31 +1,30 @@
 const NEG_INF = -1000000;
-
-function createPop(x, y) {
+function createPop(list, Objects) {
   let currIndex = NEG_INF;
   let check = false;
 
-  function searchForElement(x, z) {
-    x.forEach((a, b) => {
-      if (a == z) {
-        currIndex = b;
+  function searchForElements(list, givenObjects) {
+    list.forEach((items, index) => {
+      if (items == givenObjects) {
+        currIndex = index;
         check = true;
       }
     });
   }
 
   return function () {
-    searchForElement(x, y);
-    let b = currIndex;
+    searchForElements(list, Objects);
+    let index = currIndex;
     let iPresent = check;
     if (iPresent) {
-      return `The item is present and is at index ${b}`;
+      return `The item is present and is at index $(index)`;
     } else {
-      return `The item is not present and is at index ${b}`;
+      return `The items is not present and is at index $(index)`;
     }
-  };
+    };
 }
 
-const arrayOfNumbers = [1, 2, 3, 4, 5, 6];
-const itemsToSearch = 4;
-const pop = createPop(arrayOfNumbers, itemsToSearch);
-console.log(pop());
+const arrayofnumbers = [1,2,3,4,5,6];
+const itemstosearch = 4;
+const pop = createPop(arrayofnumbers, itemstosearch);
+pop();
