@@ -13,7 +13,7 @@ function createPop(x,y) {
    });   
   }
 
-  return function() {
+  return function () {
     searchForElement(x,y)
     let b = currIndex;
     let iPresent = check;
