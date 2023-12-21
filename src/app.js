@@ -18,9 +18,9 @@ function createPop(x,y) {
     let b = currIndex;
     let iPresent = check;
     if (iPresent) {
-      return `The item is present and is at index $(Index)`;
+      return `The item is present and is at index $(b)`;
        } else { 
-       return `The item is not present here and is at index $(Index)`;
+       return `The item is not present and is at index $(b)`;
       }
   };
 }
